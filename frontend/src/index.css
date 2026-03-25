@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --soko-amber: #E8860A;
+  --soko-earth: #7C3B0F;
+  --soko-sage:  #3D6B4F;
+  --soko-cream: #FDF6EC;
+  --soko-charcoal: #1A1209;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--soko-cream);
+  color: var(--soko-charcoal);
+  overflow-x: hidden;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+.blob { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.55s ease;
+}
+.btn-shimmer:hover::before { left: 160%; }
+.nav-glass {
+  backdrop-filter: blur(12px);
+  background: rgba(253,246,236,0.88);
+  border-bottom: 1px solid rgba(232,134,10,0.15);
+}
+.card-hover { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.card-hover:hover {
+  transform: translateY(-8px) rotate(-0.5deg);
+  box-shadow: 0 24px 48px rgba(124,59,15,0.18);
+}
+.star { color: var(--soko-amber); }
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--soko-amber);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
