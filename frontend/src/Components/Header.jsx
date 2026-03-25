@@ -56,6 +56,8 @@ function Header() {
     });
   }
 
+
+
   const username = userInfo?.info?.username;
 
   let logo = loggedIn ? "/main" : "/default";

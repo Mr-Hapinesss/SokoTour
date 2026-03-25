@@ -3,8 +3,8 @@ import Default from "./Pages/Homepage/Defaultpage.jsx";
 import Layout from "./Components/Layout.jsx";
 import SignIn from "./OpeningPages/SignInPage.jsx";
 import SignUp from "./OpeningPages/RegisterPage.jsx";
-import Main from "./Pages/main.jsx";
-import Profile from "./Pages/Profilepage.jsx";
+import Main from "./Pages/Home/main.jsx";
+import Profile from "./Pages/Profile/Profilepage.jsx";
 import { UserContextProvider } from "./Components/userContext.jsx";
 
 

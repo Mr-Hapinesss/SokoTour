@@ -87,7 +87,7 @@ function SignIn() {
       {/* Back button */}
       <div className="w-full max-w-md" style={{ position: "relative", zIndex: 10 }}>
         <Link
-          to="/"
+          to="/default"
           style={{
             display: "inline-flex", alignItems: "center", gap: "6px",
             fontSize: "0.8rem", fontWeight: 600,
@@ -115,7 +115,7 @@ function SignIn() {
 
         {/* Logo */}
         <div className="text-center" style={{ marginBottom: "2rem" }}>
-          <Link to="/" style={{
+          <Link to="/default" style={{
             display: "inline-flex", alignItems: "center",
             gap: "8px", justifyContent: "center",
             marginBottom: "1.5rem", textDecoration: "none",
