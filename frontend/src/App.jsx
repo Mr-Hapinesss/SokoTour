@@ -4,7 +4,7 @@ import Layout from "./Components/Layout.jsx";
 import SignIn from "./OpeningPages/SignInPage.jsx";
 import SignUp from "./OpeningPages/RegisterPage.jsx";
 import Main from "./Pages/Home/main.jsx";
-import Profile from "./Pages/Profile/Profilepage.jsx";
+import Profile from "./Pages/Profile/ProfilePage.jsx";
 import { UserContextProvider } from "./Components/userContext.jsx";
 
 

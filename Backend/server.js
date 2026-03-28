@@ -19,6 +19,9 @@ app.use(cookieParser());
 
 //Routes
 app.use('/user', require('./routes/UserRoutes.js'));
+app.use('/bookings', require('./routes/bookingRoutes.js'));
+app.use('/guides', require('./routes/guideRoutes.js'));
+app.use('/markets', require('./routes/marketRoutes.js'));
 
 //Default route
 app.get('/', (req, res) => {

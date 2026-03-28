@@ -1,10 +1,26 @@
-import { MARKETS, GUIDES } from "./mainData.js";
+import { useEffect, useState } from "react";
+
 
 /**
  * Props:
  *  - onBookClick : fn — opens the booking modal
  */
 function ExploreTab({ onBookClick }) {
+
+const [markets, setMarkets] = useState([]);
+const [guides,  setGuides]  = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:3000/markets/all", { credentials: "include" })
+    .then((r) => r.json())
+    .then(setMarkets);
+
+  fetch("http://localhost:3000/guides/all", { credentials: "include" })
+    .then((r) => r.json())
+    .then(setGuides);
+}, []);
+
+
   return (
     <div>
       {/* ── Markets Grid ── */}
@@ -19,7 +35,7 @@ function ExploreTab({ onBookClick }) {
         gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
         gap: "16px", marginBottom: "40px",
       }}>
-        {MARKETS.map((m, i) => (
+        {markets.map((m, i) => (
           <div key={i} className="card-lift" style={{
             background: "white", borderRadius: "18px",
             border: "1px solid rgba(26,18,9,0.07)", overflow: "hidden",
@@ -82,7 +98,7 @@ function ExploreTab({ onBookClick }) {
         className="no-scroll"
         style={{ display: "flex", gap: "16px", overflowX: "auto", paddingBottom: "8px" }}
       >
-        {GUIDES.map((g, i) => (
+        {guides.map((g, i) => (
           <div key={i} className="card-lift" style={{
             background: "white", borderRadius: "18px",
             minWidth: "200px", flexShrink: 0,
