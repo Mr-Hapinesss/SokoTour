@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 function DashboardNav({ user, isProfileComplete, onLogout }) {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
+  const handleLogout = () => {
+    onLogout?.();
+    setShowMenu(false);
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -37,7 +41,7 @@ function DashboardNav({ user, isProfileComplete, onLogout }) {
     }}>
 
       {/* Logo */}
-      <Link to="/" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+      <Link to="/main" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
         <span style={{
           width: "32px", height: "32px", borderRadius: "50%",
           background: "#E8860A", display: "flex", alignItems: "center",
@@ -126,7 +130,7 @@ function DashboardNav({ user, isProfileComplete, onLogout }) {
 
               {/* Logout button */}
               <button
-                onClick={() => { setShowMenu(false); onLogout?.(); }}
+                onClick={handleLogout}
                 style={{
                   display: "flex", alignItems: "center", gap: "10px",
                   width: "100%", padding: "10px 14px", borderRadius: "10px",

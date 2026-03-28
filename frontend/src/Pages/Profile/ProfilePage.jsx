@@ -191,7 +191,7 @@ export default function Profile() {
         padding: "14px 24px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
-        <Link to="/" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+        <Link to="/main" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
           <span style={{
             width: "32px", height: "32px", borderRadius: "50%", background: "#E8860A",
             display: "flex", alignItems: "center", justifyContent: "center",

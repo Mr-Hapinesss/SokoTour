@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../../Components/userContext.jsx";
 
 import DashboardStyles        from "./DashboardStyles.jsx";
 import LoadingScreen          from "./LoadingScreen.jsx";
@@ -20,6 +22,8 @@ function Main() {
   const [activeTab,        setActiveTab]        = useState("explore"); // "explore" | "tours"
   const [showBooking,      setShowBooking]      = useState(false);
   const [showIncomplete,   setShowIncomplete]   = useState(false);
+  const { logout } = useContext(userContext);
+
 
   // ── Fetch user on mount ────────────────────────────────────────────────────
   useEffect(() => {
@@ -62,6 +66,7 @@ function Main() {
 
   // ── Logout ─────────────────────────────────────────────────────────────────
   const handleLogout = () => {
+    logout();
     // Call your auth context logout here, e.g. logout()
     navigate("/signin");
   };
